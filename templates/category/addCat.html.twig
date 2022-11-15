@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+    <h1>Add category</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.libCategory) }}
+
+
+    <button type="submit" class="btn btn-primary">Register</button>
+    {{ form_end(form) }}
+{% endblock %}

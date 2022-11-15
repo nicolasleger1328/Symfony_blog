@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ article.title }}{% endblock %}
+
+{% block body %}
+
+
+
+    <h2>{{ article.title }}</h2>
+
+    <p class="lead">Créé par {{ article.idUser.lastname }} le {{ article.createdAt|date('d/m/Y') }}</p>
+
+    {% if article.image is null %}
+        <img src="{{ asset('images/moon.jpg') }}" alt="{{ article.title }}" class="img-fluid rounded">
+    {% else %}
+        <img src="{{ asset('images/'~article.image) }}" alt="{{ article.title }}" class="img-fluid rounded">
+    {% endif %}
+
+    <p class="lead">{{ article.content }}</p>
+    <h3>Les commentaires </h3>
+    {% if article.comments %}
+    <div class="comment">
+        {% for comment in article.comments %}
+            <div>{{ comment.content }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="comment-area">
+        {{ form_start(commentForm) }}
+        {{ form_row(commentForm.content) }}
+
+        <button type="submit" class="btn btn-primary">Commenter</button>
+        {{ form_end(commentForm) }}
+
+    </div>
+{#
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+#}
+
+
+
+{% endblock %}

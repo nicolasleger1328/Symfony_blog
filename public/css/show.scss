@@ -1,0 +1,13 @@
+.alerte{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .alert-container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color:rgba(128, 128, 128, 0.918);
+  }

@@ -1,0 +1,7 @@
+{% extends '/home/index.html.twig' %}
+
+{% block link %}
+
+    <a href="{{ path('app_edit', {'slug':myPost.slug}) }}" class="btn btn-warning">Editer</a>
+    <a href="{{ path('app_remove', {'slug':myPost.slug}) }}" class="btn btn-danger remove">Supprimer</a>
+{% endblock %}
