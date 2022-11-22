@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/ajaxGen.js" defer></script>
+    <script src="js/dl.js" defer></script>
+</head>
+<body>
+<section class="avatar">
+    <h1>Projet avatar</h1>
+    <form class="avatar-form" method="POST" action="../public/index.php">
+    <div>
+        <input type="range" id="taille" name="taille"
+                min="2" max="20">
+        <label for="taille">Taille</label>
+    </div>
+    <div>
+        <input type="range" id="couleurs" name="couleurs"
+                min="2" max="10">
+        <label for="couleurs">Couleurs</label>
+    </div>
+    <div><button id="formBtn" type="submit">Generer</button></div>
+    </form>
+    <button type="button" class="avatar-dl">download JS</button>
+    <div class="avatar-svg svg">
+    <?php if(isset($svg)) : ?>
+
+
+                <?= $svg ?>
+
+    <?php endif; ?>
+    </div>
+
+
+</section>
+</body>
+</html>

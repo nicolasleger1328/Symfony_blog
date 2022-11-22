@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+        {% block javascripts %}
+            {{ parent() }}
+            <script src="{{ asset('js/ajaxGen.js') }}" defer></script>
+        {% endblock %}
+
+{% block title %}Hello User!{% endblock %}
+
+{% block body %}
+
+    <h1>Edit Profil</h1>
+
+    <div class="data svg" data-avatar="{{ path('app_svg') }}">
+    {{ svg |raw }}
+    </div>
+    {{ form_start(formAvatar) }}
+    {{ form_row(formAvatar.taille) }}
+    {{ form_row(formAvatar.couleur) }}
+
+
+    <button type="submit" class="btn btn-primary formBtn">Generer</button>
+    {{ form_end(formAvatar) }}
+
+    {{ form_start(form) }}
+    {{ form_row(form.lastname) }}
+    {{ form_row(form.firstname) }}
+
+    <button type="submit" class="btn btn-primary">Editer</button>
+    {{ form_end(form) }}
+{% endblock %}
