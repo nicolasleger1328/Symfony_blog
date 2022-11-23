@@ -14,7 +14,7 @@ class AvatarMatrix{
     private int     $couleurs;
     public const    DEFAULT_SIZE = 5;
     
-    public function __construct(int $couleurs=self::DEFAULT_SIZE, int $taille=self::DEFAULT_SIZE)
+    public function __construct(int $taille=self::DEFAULT_SIZE, int $couleurs=self::DEFAULT_SIZE)
     {   
         $this->taille= $taille;
         $this->matrix = [];
